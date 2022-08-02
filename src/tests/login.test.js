@@ -1,10 +1,16 @@
 import { screen } from '@testing-library/react';
-import renderPath from './helpers/renderPath';
+import { createBrowserHistory } from 'history';
+// import { render } from 'react-dom';
+// import renderPath from './helpers/renderPath';
 
 describe('a', () => {
   it('a', () => {
-    renderPath("/");
-    expect(screen.getByTestId('email-input')).toBeInTheDocument();
-    expect(screen.getByTestId('password-input')).toBeInTheDocument();
+    const history = createBrowserHistory();
+    history.push('/')
+    // render("/");
+    const inputEmail = screen.findByTestId('email-input')
+    const inputSenha = screen.findByTestId('password-input')
+    expect(inputEmail).toBeDefined();
+    expect(inputSenha).toBeDefined();
   })
 })

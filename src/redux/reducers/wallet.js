@@ -10,8 +10,10 @@ const wallet = (state = INITIAL_STATE, action) => {
   // let ask;
   // const obj = action.state;
   switch (action.type) {
-  case 'COINS':
-    return { ...state, currencies: Object.keys(action.state) };
+  case 'COINS': {
+    const coins = Object.keys(action.state).filter((currencie) => currencie !== 'USDT');
+    return { ...state, currencies: coins };
+  }
   case 'COINS_DESPESA':
     return { ...state,
       expenses: [...state.expenses, { id: state.expenses.length,
