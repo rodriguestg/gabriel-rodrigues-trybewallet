@@ -7,9 +7,22 @@ const INITIAL_STATE = {
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
+  // let ask;
+  // const obj = action.state;
   switch (action.type) {
   case 'COINS':
     return { ...state, currencies: Object.keys(action.state) };
+  case 'COINS_DESPESA':
+    return { ...state,
+      expenses: [...state.expenses, { id: state.expenses.length,
+        value: action.stateLocal.number,
+        description: action.stateLocal.description,
+        currency: action.stateLocal.currency,
+        method: action.stateLocal.method,
+        tag: action.stateLocal.tag,
+        exchangeRates: action.state,
+        // ask: parseFloat(ask),
+      }] };
   default:
     return state;
   }
