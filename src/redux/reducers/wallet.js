@@ -7,8 +7,6 @@ const INITIAL_STATE = {
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
-  // let ask;
-  // const obj = action.state;
   switch (action.type) {
   case 'COINS': {
     const coins = Object.keys(action.state).filter((currencie) => currencie !== 'USDT');
@@ -23,7 +21,6 @@ const wallet = (state = INITIAL_STATE, action) => {
         method: action.stateLocal.method,
         tag: action.stateLocal.tag,
         exchangeRates: action.state,
-        // ask: parseFloat(ask),
       }] };
   default:
     return state;
