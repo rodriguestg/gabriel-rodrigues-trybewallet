@@ -23,3 +23,6 @@ export function fetchDespesas(stateLocal) {
     dispatch(despesa(data, stateLocal));
   };
 }
+
+const REMOVE = 'REMOVE';
+export const remove = (state) => ({ type: REMOVE, state });
