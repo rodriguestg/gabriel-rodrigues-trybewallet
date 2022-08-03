@@ -29,7 +29,7 @@ class Login extends React.Component {
     if (email.indexOf('@') === VAL_EMAIL
       || email.indexOf('.') === VAL_EMAIL
       || com.indexOf('com') === VAL_EMAIL) return true;
-    return false;
+    // return false;
   }
 
   clickLogin = () => {
