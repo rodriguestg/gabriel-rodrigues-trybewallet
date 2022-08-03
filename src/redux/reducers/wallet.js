@@ -24,7 +24,7 @@ const wallet = (state = INITIAL_STATE, action) => {
       }] };
   case 'REMOVE': {
     // const lineRemove = action.state;
-    const line = Object.entries(state.expenses).map(([key, value]) => {
+    const line = Object.entries(state.expenses).map(([, value]) => {
       console.log(value.id);
       console.log(action.state);
       if (value.id !== parseFloat(action.state)) { return value; }
