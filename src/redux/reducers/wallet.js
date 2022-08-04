@@ -23,18 +23,11 @@ const wallet = (state = INITIAL_STATE, action) => {
         exchangeRates: action.state,
       }] };
   case 'REMOVE': {
-    // const lineRemove = action.state;
     const line = Object.entries(state.expenses).map(([, value]) => {
-      // console.log(value.id);
-      // console.log(action.state);
       if (value.id !== parseFloat(action.state)) { return value; }
-      // if (line.length === 1) { return false; }
       return false;
     });
     const remove = line.filter((value) => value !== false);
-    // console.log(Object.entries(state.expenses));
-    // console.log(line);
-    // console.log(remove);
     return { ...state,
       expenses: [...remove] };
   }

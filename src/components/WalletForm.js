@@ -21,7 +21,6 @@ class WalletForm extends Component {
   }
 
   inputState = ({ target }) => {
-    // console.log(target);
     const { name, value } = target;
     this.setState({
       [name]: value,
@@ -81,7 +80,7 @@ class WalletForm extends Component {
             <option value="Transporte">Transporte</option>
             <option value="Saúde">Saúde</option>
           </select>
-          <button type="reset" onClick={ this.add }>
+          <button type="reset" name="Adicionar despesa" onClick={ this.add }>
             Adicionar despesa
           </button>
         </form>

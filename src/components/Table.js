@@ -6,7 +6,6 @@ import { remove } from '../redux/actions';
 class Table extends Component {
   remove = ({ target }) => {
     const { removeLine } = this.props;
-    // console.log(target);
     const line = target.value;
     removeLine(line);
   }
@@ -38,7 +37,6 @@ class Table extends Component {
               <td>{ (Math.round(coin.value * 100) / 100).toFixed(2) }</td>
               <td>
                 {Object.entries(coin.exchangeRates).map((option) => {
-                  // console.log(coin);
                   const searchCoin = option[0] === coin.currency ? option[1] : false;
                   return searchCoin.name;
                 })}
@@ -47,9 +45,7 @@ class Table extends Component {
                 {Object.entries(coin.exchangeRates).map((option) => {
                   const searchCoin = option[0] === coin.currency ? option[1] : false;
                   const { ask } = searchCoin;
-                  // console.log(ask);
                   const total = ask ? ((ask * 100) / 100).toFixed(2) : false;
-                  // console.log(total);
                   return total;
                 })}
               </td>

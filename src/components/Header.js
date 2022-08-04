@@ -10,15 +10,11 @@ class Header extends Component {
         if (key === element.currency) { return value.ask; }
         return false;
       });
-      // console.log(searchValue);
       const askValue = searchValue.find((value) => value !== false);
-      // console.log(askValue);
       return parseFloat(askValue) * element.value;
     });
-    // console.log(ask);
     const sum = ask.reduce((total, numero) => total + numero, 0);
     const totalAsk = sum.toFixed(2);
-    // console.log(totalAsk);
     return (
       <div>
         <h1 data-testid="email-field">{ email }</h1>

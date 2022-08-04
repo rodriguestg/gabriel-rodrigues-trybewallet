@@ -23,13 +23,10 @@ class Login extends React.Component {
     const MIN_PASS = 6;
     const VAL_EMAIL = -1;
     const com = email.split('.');
-    // console.log(com);
-    // console.log(pass.length);
     if (pass.length < MIN_PASS) return true;
     if (email.indexOf('@') === VAL_EMAIL
       || email.indexOf('.') === VAL_EMAIL
       || com.indexOf('com') === VAL_EMAIL) return true;
-    // return false;
   }
 
   clickLogin = () => {
@@ -61,7 +58,12 @@ class Login extends React.Component {
               onChange={ this.atualizarState }
             />
           </label>
-          <button type="button" disabled={ this.valuation() } onClick={ this.clickLogin }>
+          <button
+            type="button"
+            disabled={ this.valuation() }
+            onClick={ this.clickLogin }
+            name="Entrar"
+          >
             Entrar
           </button>
         </form>
@@ -70,7 +72,6 @@ class Login extends React.Component {
   }
 }
 
-// const mapStateToProps = (state) => ({ state });
 const mapDispatchToProps = (dispatch) => ({
   loginClick: (state) => dispatch(loginUser(state)),
 });

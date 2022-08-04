@@ -16,7 +16,6 @@ export function fetchMoney() {
 const USER_DESPESA = 'COINS_DESPESA';
 const despesa = (state, stateLocal) => ({ type: USER_DESPESA, state, stateLocal });
 export function fetchDespesas(stateLocal) {
-  // console.log(stateLocal);
   return async (dispatch) => {
     const response = await fetch(ENDPOINT);
     const data = await response.json();
