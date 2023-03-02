@@ -7,6 +7,8 @@ class Header extends Component {
     const { email, expenses } = this.props;
     const ask = expenses.map((element) => {
       const searchValue = Object.entries(element.exchangeRates).map(([key, value]) => {
+        console.log(element);
+        console.log([key, value]);
         if (key === element.currency) { return value.ask; }
         return false;
       });
